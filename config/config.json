@@ -1,0 +1,40 @@
+{
+  "server": {
+    "host": "0.0.0.0",
+    "port": 3000
+  },
+  "logger": {
+    "level": "debug"
+  },
+  "grpc": {
+    "clients": {
+      "embeds": {
+        "address": "localhost:50055",
+        "package": "embeds",
+        "protoFileName": "embeds.proto",
+        "service": "EmbedsService"
+      },
+      "reports": {
+        "address": "localhost:50065",
+        "package": "reports",
+        "protoFileName": "reports.proto",
+        "service": "ReportsService",
+        "channelOptions": {
+          "grpc.max_send_message_length": 20971520
+        }
+      },
+      "exports": {
+        "address": "localhost:50075",
+        "package": "exports",
+        "protoFileName": "exports.proto",
+        "service": "ExportsService"
+      }
+    }
+  },
+  "globalSearch": {
+    "url": "http://localhost:8888/graphql",
+    "clientId": "orders-staging"
+  },
+  "swagger": true,
+  "launchDarklyKey": null
+}
