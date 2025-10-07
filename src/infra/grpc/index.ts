@@ -44,5 +44,4 @@ export const GrpcClients = {
     }
     return grpcClients.reports
   },
-
 }
